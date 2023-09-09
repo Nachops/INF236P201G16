@@ -1,13 +1,13 @@
 > Notar que **X** corresponde al número del grupo asignado.
 
-# Grupo x
+# Grupo 16
 
 Este es el repositorio del *Grupo X*, cuyos integrantes son:
 
-* Integrante 1 - Rol
-* Integrante 2 - Rol
-* Integrante 3 - Rol
-* **Tutor**: Nombre Tutor
+* Javiera Gutiérrez - Rol
+* Luciano Yevenes - Rol
+* Martín Pino - 202073528-k
+* **Tutor**: Ignacio Muñoz
 
 ## Wiki
 
