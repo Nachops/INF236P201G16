@@ -1,8 +1,6 @@
-> Notar que **X** corresponde al número del grupo asignado.
-
 # Grupo 16
 
-Este es el repositorio del *Grupo X*, cuyos integrantes son:
+Este es el repositorio del *Grupo 16*, cuyos integrantes son:
 
 * Javiera Gutiérrez - Rol
 * Luciano Yevenes - Rol
