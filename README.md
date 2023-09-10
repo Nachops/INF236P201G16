@@ -3,7 +3,7 @@
 Este es el repositorio del *Grupo 16*, cuyos integrantes son:
 
 * Javiera Gutiérrez - Rol
-* Luciano Yevenes - Rol
+* Luciano Yevenes - 202173514-3
 * Martín Pino - 202073528-k
 * **Tutor**: Ignacio Muñoz
 
