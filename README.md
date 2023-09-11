@@ -17,7 +17,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Nachop
 > Reemplazar con los enlaces correspondientes
 
 * [Video presentación cliente](https://www.youtube.com/watch?v=zkh5qiSlN1M))
-* 
+ 
 ## Aspectos técnicos relevantes
 
 _Todo aspecto relevante cuando para poder usar el proyecto o consideraciones del proyecto base a ser entregado_
