@@ -16,7 +16,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Nachop
 
 > Reemplazar con los enlaces correspondientes
 
-* [Video presentación cliente](https://www.youtube.com/watch?v=zkh5qiSlN1M))
+* [Video presentación cliente](https://www.youtube.com/watch?v=zkh5qiSlN1M)
  
 ## Aspectos técnicos relevantes
 
