@@ -9,12 +9,10 @@ Este es el repositorio del *Grupo 16*, cuyos integrantes son:
 
 ## Wiki
 
-> Obtener enlace desde el home de la wiki del repo.
 
 Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Nachops/INF236P201G16/wiki)
 ## Videos
 
-> Reemplazar con los enlaces correspondientes
 
 * [Video presentación cliente](https://www.youtube.com/watch?v=zkh5qiSlN1M)
  
