@@ -1,50 +1,144 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './HU2Page.css';
 import Header from './components/Header';
 const HU2Page = () => {
-  const generateReport = (event) => {
-    event.preventDefault();
-    // Lógica para generar el informe
-    console.log('Informe generado');
+  const [citas, setCitas] = useState([]);
+  const [citaEditada, setCitaEditada] = useState({
+    id: "",
+    fecha: "",
+    hora: "",
+    tipo: ""
+  });
+  const [historialCambios, setHistorialCambios] = useState([]);
+  const [usuarioEditor, setUsuarioEditor] = useState("");
+  const [ventanaEmergenteVisible, setVentanaEmergenteVisible] = useState(false);
 
-    // Redirigir a la página de informe generado (puedes ajustar la ruta según tu estructura)
-    // Por ejemplo, si tienes una ruta '/report', deberías cambiar '/report' en el 'to' prop.
-    window.location.href = '/report';
-  };
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setCitaEditada({ ...citaEditada, [name]: value });
+  }
+
+  const guardarCambios = () => {
+    const citaAntesDeEdicion = citas.find((c) => c.id === citaEditada.id);
+    citaAntesDeEdicion.usuarioEditor = usuarioEditor;
+
+    setHistorialCambios([...historialCambios, citaAntesDeEdicion]);
+
+    setVentanaEmergenteVisible(false);
+
+    const nuevasCitas = citas.map((c) => {
+      if (c.id === citaEditada.id) {
+        return citaEditada;
+      } else {
+        return c;
+      }
+    });
+
+    setCitas(nuevasCitas);
+    setCitaEditada({
+      id: "",
+      fecha: "",
+      hora: "",
+      tipo: ""
+    });
+  }
+
+  const cargarCitasEjemplo = () => {
+    const ejemplos = [
+      { id: "1", fecha: "2023-11-01", hora: "10:00 AM", tipo: "Radiografia Femur" },
+      { id: "2", fecha: "2023-11-02", hora: "02:30 PM", tipo: "Escaner" },
+    ];
+    setCitas(ejemplos);
+  }
+
+  useEffect(() => {
+    cargarCitasEjemplo();
+  }, []);
 
   return (
-    <div>
+    
+    <div className="App">
       <Header/>
-      <div className="container">
-        <h2>Generar Informe de Trabajo</h2>
-        <form id="reportForm" onSubmit={generateReport}>
-          <div className="form-group">
-            <label htmlFor="startDate">Fecha de Inicio:</label>
-            <input type="date" id="startDate" name="startDate" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="endDate">Fecha de Fin:</label>
-            <input type="date" id="endDate" name="endDate" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="personnel">Personal:</label>
+      <h1>Editar Citas</h1>
+      <div>
+        <h2>Citas Programadas</h2>
+        <ul>
+          {citas.map((c) => (
+            <li key={c.id}>
+              <span>Fecha: {c.fecha}, Hora: {c.hora}, Tipo: {c.tipo}</span>
+              <button
+                onClick={() => {
+                  setCitaEditada(c);
+                  setUsuarioEditor("Nombre del Usuario");
+                  setVentanaEmergenteVisible(true);
+                }}
+              >
+                Editar
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>Historial de Cambios</h2>
+        <ul>
+          {historialCambios.map((c, index) => (
+            <li key={index}>
+              <span>Fecha: {c.fecha}, Hora: {c.hora}, Tipo: {c.tipo}</span>
+              {c.usuarioEditor && (
+                <span> Editado por: {c.usuarioEditor}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {ventanaEmergenteVisible && (
+        <div className="ventana-emergente">
+          <h2>Editar Cita</h2>
+          <div className="espace">
+            <label>Fecha:</label>
             <input
-              type="text"
-              id="personnel"
-              name="personnel"
-              placeholder="Nombre del personal"
-              required
+              type="date"
+              name="fecha"
+              value={citaEditada.fecha}
+              onChange={handleInputChange}
             />
           </div>
-
-          <button type="submit">Generar Informe</button>
-        </form>
-      </div>
+          <div className="espace">
+            <label>Hora:</label>
+            <input
+              type="time"
+              name="hora"
+              value={citaEditada.hora}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="espace">
+            <label>Tipo:</label>
+            <input
+              type="text"
+              name="tipo"
+              value={citaEditada.tipo}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="espace">
+            <label>Usuario que edita:</label>
+            <input
+              type="text"
+              className="usuario-editor"
+              name="usuarioEditor"
+              value={usuarioEditor}
+              onChange={(e) => setUsuarioEditor(e.target.value)}
+            />
+          </div>
+          <div className="boton-guardar">
+            <button onClick={guardarCambios}>Guardar Cambios</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
-export default HU2Page;
+export default HU2Page
