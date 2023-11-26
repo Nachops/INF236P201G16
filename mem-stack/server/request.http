@@ -1,10 +1,2 @@
 ###
-POST http://localhost:5000/api/horarios_examenes HTTP/1.1
-Content-Type: application/json
-
-    {
-      "fecha": "2023-12-01",
-      "hora": "08:30",
-      "tipo_examen": "Radiografía",
-      "flag": false
-    }
+GET http://localhost:5000/api/horario/filtrar?nombreUsuario=none&fecha=2023-12-03&tipo_examen=Radiografia HTTP/1.1
