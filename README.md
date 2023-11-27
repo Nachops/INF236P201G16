@@ -16,6 +16,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Nachop
 
 * [Video presentación cliente](https://www.youtube.com/watch?v=zkh5qiSlN1M)
 * [H4 - Prototipo HU 02 Gestión de Errores y Cambios en Citas](https://youtu.be/2S7uKUHWfog)
+* [H6 y H7 - Conclusiones, entrega final](https://youtu.be/uOO9HsSicqI)
  
 ## Aspectos técnicos relevantes
 
