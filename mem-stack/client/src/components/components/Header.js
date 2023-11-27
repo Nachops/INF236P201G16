@@ -9,7 +9,7 @@ const Header = () => {
         <img src="/hospital.png" alt="Logo" />
       </div>
       <div className="return-link">
-        <a href="#">Regresar a Menú</a>
+        <a href="/">Regresar a Menú</a>
       </div>
     </header>
   );

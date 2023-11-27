@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './HU1Page.css';
 import Header from './components/Header';
 import axios from "axios";
