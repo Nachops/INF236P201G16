@@ -1,12 +1,11 @@
-# Grupo 26
+# Grupo 16
 
-Este es el repositorio del *Grupo 26*, cuyos integrantes son:
+Este es el repositorio del *Grupo 16*, cuyos integrantes son:
 
 * Javiera Gutiérrez - 202173626-3
 * Luciano Yevenes - 202173514-3
 * Martín Pino - 202073528-k
-* **Tutor ISW**: Nilsson Acevedo
-* **Tutor Anterior**: Ignacio Muñoz
+* **Tutor**: Ignacio Muñoz
 
 ## Wiki
 
